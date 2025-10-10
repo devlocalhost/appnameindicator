@@ -1,5 +1,5 @@
 # App Name Indicator
-A GNOME Shell extension that shows the active app's name and icon on the left side of the top panel, like it used to, before version 49.0.
+A GNOME Shell extension that shows the active app's name and icon on the left side of the top panel, like it used to, before version 49.0.   
 ![Image preview](preview.png)
 
 # Note
