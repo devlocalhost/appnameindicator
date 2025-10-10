@@ -3,8 +3,12 @@ A GNOME Shell extension that shows the active app's name and icon on the left si
 ![Image preview](preview.png)
 
 # Note
-This extension does NOT restore the old, App Menu behavior. This extension simply adds the app's name and/or label, nothing else.
+1. This extension does NOT restore the old, App Menu behavior. This extension simply adds the app's name and/or label, nothing else.
+2. I am not a JavaScript, or GNOME Shell Extensions developer. I made this with chatGPT, since GNOME removed it on later versions. I will try my best to keep it up to date and fix issues, but don't expect much.
 
 ## Installation
-- Get it from the GNOME Extensions website: [GNOME Extensions page].
-- Or manually install it: TODO
+- Get it from the GNOME Extensions website: Upload pending, link will be available once approven.
+- Or install it manually:
+    1. Change current working directory to ~/.local/share/gnome-shell/extensions/: `cd ~/.local/share/gnome-shell/extensions/`
+    2. Clone the repo: `git clone https://github.com/devlocalhost/appnameindicator-extension`
+    3. Activate the extension using Extensions app, or gnome-extensions command: `gnome-extensions enable appnameindicator@dev64.xyz`. A log-out might be required.
