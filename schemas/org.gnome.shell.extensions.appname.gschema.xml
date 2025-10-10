@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema id="org.gnome.shell.extensions.appname" path="/org/gnome/shell/extensions/appname/">
+  <schema id="org.gnome.shell.extensions.appnameindicator" path="/org/gnome/shell/extensions/appnameindicator/">
     <key name="format" type="s">
       <default>"{name}"</default>
       <summary>Window Label Format</summary>

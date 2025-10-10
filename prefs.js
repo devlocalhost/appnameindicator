@@ -3,7 +3,7 @@ import Adw from 'gi://Adw'
 import Gio from 'gi://Gio'
 import Gtk from 'gi://Gtk'
 
-export default class AppNamePrefs extends ExtensionPreferences {
+export default class AppNameIndicatorPrefs extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         const settings = this.getSettings()
 
@@ -12,6 +12,7 @@ export default class AppNamePrefs extends ExtensionPreferences {
             title: 'Window Label Format',
             description: 'Customize how the active app is displayed on the panel.',
         })
+        
         page.add(group)
 
         const formatRow = new Adw.ActionRow({ title: 'Format string' })
@@ -47,6 +48,7 @@ export default class AppNamePrefs extends ExtensionPreferences {
             active: settings.get_boolean('show-icon'),
             valign: Gtk.Align.CENTER,
         })
+        
         settings.bind('show-icon', iconSwitch, 'active', Gio.SettingsBindFlags.DEFAULT)
         iconRow.add_suffix(iconSwitch)
         iconRow.activatable_widget = iconSwitch
@@ -57,6 +59,7 @@ export default class AppNamePrefs extends ExtensionPreferences {
             active: settings.get_boolean('show-text'),
             valign: Gtk.Align.CENTER,
         })
+        
         settings.bind('show-text', textSwitch, 'active', Gio.SettingsBindFlags.DEFAULT)
         textRow.add_suffix(textSwitch)
         textRow.activatable_widget = textSwitch
