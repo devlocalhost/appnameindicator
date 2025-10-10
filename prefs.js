@@ -12,7 +12,9 @@ export default class AppNamePrefs extends ExtensionPreferences {
             title: 'Display format',
             text: settings.get_string('format'),
         })
+        
         row.connect('changed', () => settings.set_string('format', row.text))
+        
         group.add(row)
         page.add(group)
         window.add(page)

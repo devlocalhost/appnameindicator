@@ -1,10 +1,10 @@
 <schemalist>
   <schema id="org.gnome.shell.extensions.appname" path="/org/gnome/shell/extensions/appname/">
     <key name="format" type="s">
-      <default>"{class}: {title}"</default>
+      <default>"{name}"</default>
       <summary>Format string for window label</summary>
       <description>
-        Use {class} and {title} placeholders to format the display text.
+        Use {name}, {class}, and {title} placeholders.
       </description>
     </key>
   </schema>
