@@ -2,7 +2,7 @@
   "uuid": "appname@dev64",
   "name": "App Name Indicator",
   "description": "Shows active window info on panel",
-  "version": 2,
+  "version": 1.0,
   "shell-version": ["49"],
   "entry-point": "extension.js",
   "settings-schema": "org.gnome.shell.extensions.appname"

@@ -1,11 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
   <schema id="org.gnome.shell.extensions.appname" path="/org/gnome/shell/extensions/appname/">
     <key name="format" type="s">
       <default>"{name}"</default>
-      <summary>Format string for window label</summary>
+      <summary>Window Label Format</summary>
       <description>
-        Use {name}, {class}, and {title} placeholders.
+        Available placeholders for formatting the window label:
+
+        • {name}: Application name ("Extensions")
+        • {class}: Application class ("org.gnome.Shell.Extensions")
+        • {title}: Window title ("App Name Indicator")
       </description>
+    </key>
+    <key name="show-icon" type="b">
+      <default>true</default>
+      <summary>Show application icon</summary>
+    </key>
+    <key name="show-text" type="b">
+      <default>true</default>
+      <summary>Show text label</summary>
     </key>
   </schema>
 </schemalist>
