@@ -24,6 +24,7 @@ export default class AppNameIndicator extends Extension {
 
         this.winSignal = global.display.connect('notify::focus-window', () => this.update())
         this.settSignal = this.settings.connect('changed', () => this.update())
+        this.titleSignal = null;
         
         this.update()
     }
@@ -32,6 +33,7 @@ export default class AppNameIndicator extends Extension {
         if (this.winSignal) global.display.disconnect(this.winSignal)
         if (this.settSignal) this.settings.disconnect(this.settSignal)
         if (this.box) Main.panel._leftBox.remove_child(this.box)
+        if (this.titleSignal && this.lastWindow) this.lastWindow.disconnect(this.titleSignal)
         
         this.box = this.icon = this.label = null
         this.settings = null
@@ -39,9 +41,29 @@ export default class AppNameIndicator extends Extension {
 
     update() {
         const w = global.display.focus_window
-        if (!w) { this.box.visible = false; return }
+        
+        if (!w) {
+            this.box.visible = false
+            
+            if (this.titleSignal) {
+                this.titleSignal.disconnect(this.titleSignal);
+                this.titleSignal = null
+            }
+            
+            return
+        }
         
         this.box.visible = true
+
+        if (this.lastWindow !== w) {
+            if (this.titleSignal) {
+                this.lastWindow.disconnect(this.titleSignal)
+                this.titleSignal = null
+            }
+            
+            this.titleSignal = w.connect('notify::title', () => this.update())
+            this.lastWindow = w
+        }
 
         const app = Shell.WindowTracker.get_default().get_window_app(w)
         let name = '', gicon = null
