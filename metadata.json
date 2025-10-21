@@ -1,5 +1,5 @@
 {
-  "uuid": "appnameindicator@dev64.xyz",
+  "uuid": "appnameindicator-extension@dev64.xyz",
   "name": "App Name Indicator",
   "description": "Shows the active app's name and icon on the left side of the top panel.",
   "shell-version": ["49"],
