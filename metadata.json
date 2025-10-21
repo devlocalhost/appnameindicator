@@ -2,8 +2,9 @@
   "uuid": "appnameindicator@dev64.xyz",
   "name": "App Name Indicator",
   "description": "Shows the active app's name and icon on the left side of the top panel.",
-  "version": 1.1,
   "shell-version": ["49"],
-  "entry-point": "extension.js",
-  "settings-schema": "org.gnome.shell.extensions.appnameindicator"
+  "url": "https://github.com/devlocalhost/appnameindicator-extension/",
+  "donations": {
+      "kofi": "https://ko-fi.com/dev64"
+  }
 }
