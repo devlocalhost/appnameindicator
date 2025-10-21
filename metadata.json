@@ -6,5 +6,6 @@
   "url": "https://github.com/devlocalhost/appnameindicator-extension/",
   "donations": {
       "kofi": "dev64"
-  }
+  },
+  "settings-schema": "org.gnome.shell.extensions.appnameindicator-extensions"
 }
