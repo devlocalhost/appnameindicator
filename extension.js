@@ -32,27 +32,37 @@ export default class AppNameIndicator extends Extension {
     }
 
     disable() {
-        if (this.focusSignal) {
-            global.display.disconnect(this.focusSignal)
-            this.focusSignal = 0
-        }
+		if (this.focusSignal) {
+			global.display.disconnect(this.focusSignal)
+			this.focusSignal = 0
+		}
 
-        if (this.settingsSignal) {
-            this.settings.disconnect(this.settingsSignal)
-            this.settingsSignal = 0
-        }
+		if (this.settingsSignal) {
+			this.settings.disconnect(this.settingsSignal)
+			this.settingsSignal = 0
+		}
 
-        this.disconnectWindowSignal()
+		this.disconnectWindowSignal()
 
-        if (this.box)
-            Main.panel._leftBox.remove_child(this.box)
+		if (this.icon) {
+			this.icon.destroy()
+			this.icon = null
+		}
 
-        this.lastWindow = null
-        this.box = null
-        this.icon = null
-        this.label = null
-        this.settings = null
-    }
+		if (this.label) {
+			this.label.destroy()
+			this.label = null
+		}
+
+		if (this.box) {
+			Main.panel._leftBox.remove_child(this.box)
+			this.box.destroy()
+			this.box = null
+		}
+
+		this.lastWindow = null
+		this.settings = null
+	}
 
     disconnectWindowSignal() {
         if (this.lastWindow && this.titleSignal) {
